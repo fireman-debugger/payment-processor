@@ -1,0 +1,19 @@
+name: Payment Processor
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Run build script
+        run: |
+          echo "Building payment processor..."
+          npm install
+          npm run build
